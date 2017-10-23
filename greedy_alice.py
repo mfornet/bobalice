@@ -42,7 +42,7 @@ def similarity(w1, w2):
             if c1 == c2:
                 distance[(i+1, j+1)] = distance[(i,j)]
             else:
-                # Otherwise we can past c1 or c2 at either end,
+                # Otherwise we can paste c1 or c2 at either end,
                 # or swap them
                 keep_c1 = distance[(i, j+1)]
                 keep_c2 = distance[(i+1, j)]
