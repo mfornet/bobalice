@@ -54,10 +54,10 @@ def similarity(w1, w2):
 
 def main():
     # Read the size of the language
-    N = int(raw_input())
+    N = int(input())
 
     # Read the alfabet
-    alphabet = raw_input()
+    alphabet = input()
 
     # Here we store all the previous answers
     memory = []
@@ -72,13 +72,13 @@ def main():
         # Print and store the response
         print(question)
         sys.stdout.flush()
-        answer = raw_input()
+        answer = input()
 
         memory.append((question, answer))
 
     # Asnwer the N responses
     for i in range(N):
-        question = raw_input()
+        question = input()
 
         # Find the closest answer and return that
         closest, answer = min(memory, key=lambda t: similarity(t[0], question))

@@ -46,16 +46,16 @@ class Bob:
         N = language.size
         alphabet = language.alphabet
 
-        alice.stdin.write('%i\n' % N)
-        alice.stdin.write('%s\n' % alphabet)
+        alice.stdin.write(('%i\n' % N).encode('utf8'))
+        alice.stdin.write(('%s\n' % alphabet).encode('utf8'))
         alice.stdin.flush()
 
         for i in range(N):
-            question = alice.stdout.readline().strip()
+            question = alice.stdout.readline().strip().decode('utf8')
             answer = 'yes' if language.test(question) else 'no'
 
             print("Got: `%s` ==> `%s`" % (question, answer))
-            alice.stdin.write('%s\n' % answer)
+            alice.stdin.write(('%s\n' % answer).encode('utf8'))
             alice.stdin.flush()
 
         for i in range(N):
@@ -67,10 +67,10 @@ class Bob:
                 question = language.generate(self.rnd, length)
 
             expected_answer = 'yes' if language.test(question) else 'no'
-            alice.stdin.write('%s\n' % question)
+            alice.stdin.write(('%s\n' % question).encode('utf8'))
             alice.stdin.flush()
 
-            answer = alice.stdout.readline().strip()
+            answer = alice.stdout.readline().strip().decode('utf8')
 
             print("Asked: `%s` ==> `%s` vs `%s`" % (question, answer, expected_answer))
 

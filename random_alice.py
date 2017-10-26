@@ -9,10 +9,10 @@ implementation should be better than her.
 
 def main():
     # Read the size of the language
-    N = int(raw_input())
+    N = int(input())
 
     # Read the alfabet
-    alphabet = raw_input()
+    alphabet = input()
 
     # Place the N questions
     for i in range(N):
@@ -25,14 +25,14 @@ def main():
         print(question)
         sys.stdout.flush()
 
-        answer = raw_input()
+        answer = input()
 
         # But at least check is OK
         assert answer in ['yes', 'no']
 
     # Asnwer the N responses
     for i in range(N):
-        question = raw_input()
+        question = input()
 
         # Is Bob cheating ?
         assert all(symbol in alphabet for symbol in question)
